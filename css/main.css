@@ -1,0 +1,60 @@
+/* B O D Y */
+body {
+  font-family: Geneva;
+  background-image: url("../images/katahdin.jpg");
+  background-size: 100%;
+  margin: 0;
+}
+
+/* H E A D E R */
+header {
+  background: #999;
+  padding: 10px 10px 0px 10px;
+}
+header h1 {
+  margin: 0;
+  display: inline;
+}
+header h1 a {
+  text-decoration: none;
+}
+header h1 a:link, header h1 a:visited {
+  color: #FFFFFF;
+}
+header h1 a:hover, header h1 a:active {
+  color: #DDDDDD;
+}
+nav {
+  margin: 0;
+  display: inline;
+}
+nav ul {
+  display: inline;
+}
+nav ul li {
+  list-style-type: none;
+  display: inline;
+}
+nav ul li a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  padding: 6px 15px 6px 15px;
+}
+nav ul li a:link, nav ul li a:visited {
+  background: #000000;
+}
+nav ul li a:hover, nav ul li a:active {
+  background: #444444;
+}
+
+/* M A I N   C O N T E N T */
+.mainContent {
+  background: #E0E0E0;
+  padding: 20px 50px;
+}
+
+/* F O O T E R */
+footer {
+  color: #999;
+}
