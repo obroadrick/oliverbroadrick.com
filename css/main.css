@@ -2,7 +2,12 @@
 body {
   font-family: Geneva;
   background-image: url("../images/katahdin.jpg");
-  background-size: 100%;
+  background-repeat: no-repeat;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  background-size:cover;
+  background-position: center;
   margin: 0;
 }
 
@@ -17,6 +22,7 @@ header h1 {
 }
 header h1 a {
   text-decoration: none;
+  font-style: italic;
 }
 header h1 a:link, header h1 a:visited {
   color: #FFFFFF;
@@ -40,6 +46,7 @@ nav ul li a {
   color: white;
   text-decoration: none;
   padding: 6px 15px 6px 15px;
+  border-radius: 5px 5px 0 0;
 }
 nav ul li a:link, nav ul li a:visited {
   background: #000000;
@@ -48,13 +55,33 @@ nav ul li a:hover, nav ul li a:active {
   background: #444444;
 }
 
+/* T R A N S I T I O N */
+.transition {
+  padding: 5px;
+  background-color: #000000;
+  margin: 0;
+}
+
+/* P A G E   T I T L E */
+h2 {
+  color: white;
+  background-color: black;
+  display: inline-block;
+  margin: 0;
+  padding: 0 5% 1% 5%;
+  border-radius: 0 0 5px 0;
+}
+
 /* M A I N   C O N T E N T */
 .mainContent {
   background: #E0E0E0;
   padding: 20px 50px;
+  margin: 10px;
+  border-radius: 5px;
 }
 
 /* F O O T E R */
 footer {
-  color: #999;
+  color: #000000;
+  padding-left: 5%;
 }
