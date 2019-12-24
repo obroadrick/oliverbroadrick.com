@@ -1,0 +1,60 @@
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: courier;
+  margin: 0;
+  padding: 0;
+}
+header {
+  position: fixed;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+header nav {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+header nav ul {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  padding-top: 32px;
+  width: 100%;
+}
+header nav ul li {
+  display: inline-block;
+  width: 32%;
+  margin: 0;
+  padding: 0;
+}
+header nav ul li a {
+  text-decoration: none;
+  margin: 0;
+}
+header nav ul li a:link, header nav ul li a:visited {
+  color: #222222;
+}
+header nav ul li a:hover, header nav ul li a:active {
+  color: #AAAAAA;
+}
+h2 {
+  margin: 0;
+  padding-top: 300px;
+}
+
+#home {
+  background-color: grey;
+  text-align: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
