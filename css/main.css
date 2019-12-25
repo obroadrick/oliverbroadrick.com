@@ -12,6 +12,7 @@ body {
   font-family: courier;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 header {
   position: fixed;
@@ -57,4 +58,10 @@ h2 {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+#snakeCanvas {
+  background-color: black;
+  margin-top: 100px;
+  display: inline-block;
 }
