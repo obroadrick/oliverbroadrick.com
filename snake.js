@@ -139,7 +139,7 @@ function gameover() {
   playing = false;
   ctx.fillStyle = "#FFFFFF";
   ctx.font = "40px Courier";
-  ctx.fillText("dumbass", 50, 50);
+  ctx.fillText("you lost", 50, 50);
   ctx.font = "20px Courier";
   ctx.fillText("press space to play", 50, 300);
 }
