@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Oliver Broadrick - Sorting</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <script type="text/javascript" src="main.js"></script>
+</head>
+<body>
+  <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">OLIVER</a></li>
+          <li><a href="contact.html">CONTACT ME</a></li>
+          <li><a href="tetris.html">TETRIS</a></li>
+          <li><a href="snake.html">SNAKE</a></li>
+          <li><a href="sorting.html">SORTING</a></li>
+        </ul>
+      </nav>
+  </header>
+
+  <canvas id="sortingCanvas" width="800" height="300"></canvas>
+
+  <div id="sortingControls">
+    <div class="sortingControlItem">
+
+    </div>
+    <div class="sortingControlItem">
+      <input value="SORT" type="button" onclick="sort()">
+    </div>
+    <div class="sortingControlItem">
+      Sorting Algorithm<br>
+      <select>
+        <option value="selection">Selection Sort</option>
+        <!--<option value="bubble">Bubble Sort</option>
+        <option value="quick">Quick Sort</option>
+        <option value="insertion">Insertion Sort</option>-->
+      </select>
+    </div>
+    <div class="sortingControlItem">
+      Number of Elements<br>
+      <input id="numElements" type="number" value="80" size="5">
+    </div>
+    <div class="sortingControlItem">
+      Speed<br>
+      <select id="speed">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6" selected="selected">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+    </div>
+  </div>
+
+  <script src="sort.js"></script>
+
+</body>
+</html>
