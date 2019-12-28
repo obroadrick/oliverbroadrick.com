@@ -58,7 +58,7 @@ function drawArray() {
 function generateArray(numberOfElements, minValue, maxValue) {
   let array = [];
   for (let i=0; i<numberOfElements; i++){
-    array[i] = Math.floor(Math.random()*canvas.height);
+    array[i] = Math.ceil(Math.random()*canvas.height);
   }
   return array;
 }
