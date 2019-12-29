@@ -25,20 +25,28 @@
 
     </div>
     <div class="sortingControlItem">
-      <input value="SORT" type="button" onclick="sort()">
+      <input id="sortButton" value="SORT" type="button" onclick="sort()">
     </div>
     <div class="sortingControlItem">
       Sorting Algorithm<br>
-      <select>
+      <select id="algorithm">
         <option value="selection">Selection Sort</option>
-        <!--<option value="bubble">Bubble Sort</option>
-        <option value="quick">Quick Sort</option>
+        <option value="bubble">Bubble Sort</option>
+        <!--<option value="quick">Quick Sort</option>
         <option value="insertion">Insertion Sort</option>-->
       </select>
     </div>
     <div class="sortingControlItem">
-      Number of Elements<br>
-      <input id="numElements" type="number" value="80" size="5">
+      Quantity<br>
+      <select id="numElements">
+        <option value="8">8</option>
+        <option value="16">16</option>
+        <option value="32">32</option>
+        <option value="64" selected="selected">64</option>
+        <option value="128">128</option>
+        <option value="256">256</option>
+        <option value="512">512</option>
+      </select>
     </div>
     <div class="sortingControlItem">
       Speed<br>

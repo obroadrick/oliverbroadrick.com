@@ -3,7 +3,7 @@ html {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: grey;
+  background-color: #808080;
 }
 
 body {
@@ -50,10 +50,6 @@ header nav ul li a:link, header nav ul li a:visited {
 header nav ul li a:hover, header nav ul li a:active {
   color: #AAAAAA;
 }
-h2, h3 {
-  margin: 0;
-  padding-top: 250px;
-}
 
 #notop {
   padding-top: 32px;
@@ -63,13 +59,13 @@ h2, h3 {
   text-align: center;
   height: 100%;
   margin: 0;
-  padding: 0;
+  padding: 250px 0;
 }
 
 #snakeCanvas {
-  background-color: black;
   margin-top: 100px;
   display: inline-block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #sortingCanvas {
@@ -90,9 +86,22 @@ h2, h3 {
   width: 100%;
 }
 
+input {
+  font-family: "courier";
+}
+
+select {
+  font-family: "courier";
+}
+
 .sortingControlItem {
   display: inline-block;
   text-align: center;
+  margin: 0;
+}
+
+.sortingControlItem input {
+  margin: 0;
 }
 
 .sortingControlItem input, .sortingControlItem select {
@@ -107,23 +116,28 @@ h2, h3 {
   outline: none;
 }
 
+#sortButton {
+  font-size: 24px;
+}
+
+#sortButton:focus {
+  background-color: #AAAAAA;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
 #numElements {
   width: 48px;
 }
 
-#contactinfo {
-  text-align: center;
-  display: inline-block;
-}
-
-#contactinfo a {
+#home a {
   text-decoration: none;
   margin: 0;
 }
 
-#contactinfo a:link, #contactinfo a:visited {
+#home a:link, #home a:visited {
   color: #000000;
 }
-#contactinfo a:hover, #contactinfo a:active {
+#home a:hover, #home a:active {
   color: #555555;
 }

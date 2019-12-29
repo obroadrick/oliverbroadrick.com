@@ -2,6 +2,7 @@
 const COLOR_1 = "#222222";
 const COLOR_2 = "#999999";
 const COLOR_3 = "#AAAAAA";
+const BACK_COLOR = "#808080";
 
 //GET CANVAS AND CONTEXT VARS
 var canvas = document.getElementById("sortingCanvas");
@@ -32,25 +33,42 @@ function sort() {
   let maxValue = canvas.height;
   let array = generateArray(numberOfElements, minValue, maxValue);
   let speed = Math.floor(1641*Math.pow(2.71828,-0.802*document.getElementById("speed").value));
-console.log(speed);
-  let selectionSorter = new SelectionSorter(array, speed);
-  selectionSorter.beginSorting();
-  sorter = selectionSorter;
+  switch (document.getElementById("algorithm").value) {
+    case "selection":
+      sorter = new SelectionSorter(array, speed);
+      break;
+    case "bubble":
+      sorter = new BubbleSorter(array, speed);
+      break;
+  }
+  console.log(document.getElementById("algorithm"));
+  sorter.beginSorting();
 }
 
 //DRAW THE ARRAY
 function drawArray() {
+  let color_2_num = -1;
+  let color_3_num = -1;
+  let color_4_num = -1;
+  switch (sorter.name) {
+    case "selection":
+      color_2_num = sorter.innerIndex;
+      color_3_num = sorter.outerIndex;
+      break;
+    case "bubble":
+      color_2_num = sorter.index;
+      break;
+  }
   let arrayLength = sorter.array.length;
-  let innerIndex = sorter.innerIndex;
-  let outerIndex = sorter.outerIndex;
+
   for (let i = 0; i < arrayLength; i++){
-    ctx.fillStyle = COLOR_1;
-    if (i == innerIndex) {
+    ctx.fillStyle = "#000000";
+    if (i == color_2_num) {
       ctx.fillStyle = COLOR_2;
-    } else if (i == outerIndex) {
+    } else if (i == color_3_num) {
       ctx.fillStyle = COLOR_3;
     }
-    ctx.fillRect(i/arrayLength*canvas.width,canvas.height,canvas.width/arrayLength,-sorter.array[i]);
+    ctx.fillRect(i/arrayLength*canvas.width,canvas.height,canvas.width/arrayLength + .5,-sorter.array[i]);
   }
 }
 
@@ -65,6 +83,7 @@ function generateArray(numberOfElements, minValue, maxValue) {
 
 //CONSTRUCTOR FOR SELECTION SORTER OBJECT
 function SelectionSorter(passed_array, speed) {
+  this.name = "selection";
   this.array = passed_array;
   this.outerIndex = 0;
   this.innerIndex = 0;
@@ -109,46 +128,41 @@ function SelectionSorter(passed_array, speed) {
 }
 
 //CONSTRUCTOR FOR SELECTION SORTER OBJECT
-function BubbleSorter(passed_array) {
+function BubbleSorter(passed_array, speed) {
+  this.name = "bubble";
   this.array = passed_array;
-  this.outerIndex = 0;
-  this.innerIndex = 0;
+  this.index = 0;
   this.arrayLength = this.array.length;
-  this.minimumIndex = 0;
-  this.minimumValue = this.array[0];
-  this.currentValue = 0;
   this.id;
+  this.hasSwapped = false;
   var self = this;
 
   //FUNCTION WHICH CAUSES THE SORTING TO BEGIN
   this.beginSorting = function() {
-    self.id = setInterval(this.progressSortOnce, 10);
+    self.id = setInterval(this.progressSortOnce, speed);
   };
 
-  //MAKE ONE PROGRESSION OF SELECTION SORT
+  //MAKE ONE PROGRESSION OF BUBBLE SORT
   this.progressSortOnce = function() {
     //HANDLE THE UPPER BOUND OF THE INDICES
-    if (self.outerIndex >= self.arrayLength) {
-      clearInterval(self.id);
-      return;
-    }
-    if (self.innerIndex == self.arrayLength) {
+    if (self.index == self.arrayLength) {
+      if (!hasSwapped) {
+        clearInterval(self.id);
+        return;
+      } else {
+        self.index = 0;
+        hasSwapped = false;
+      }
+    } 
+    if (self.array[self.index] > self.array[self.index+1]) {
       //SWAP
-      let temp = self.array[self.outerIndex];
-      self.array[self.outerIndex] = self.array[self.minimumIndex];
-      self.array[self.minimumIndex] = temp;
-      //SET INDICES AND MIN VARIABLES
-      self.outerIndex++;
-      self.minimumIndex = self.outerIndex;
-      self.minimumValue = self.array[self.minimumIndex];
-      self.innerIndex = self.outerIndex; 
+      let temp = self.array[self.index];
+      self.array[self.index] = self.array[self.index+1];
+      self.array[self.index+1] = temp;
+      //SET SWAP VARIABLE
+      hasSwapped = true;
     }
-    //COMPARE CURRENT VALUE TO MINIMUM AND UPDATE IF SMALLER
-    if (self.array[self.innerIndex] < self.minimumValue) {
-      self.minimumIndex = self.innerIndex;
-      self.minimumValue = self.array[self.innerIndex];
-    }
-    //INCREASE INDICES
-    self.innerIndex++;
+    //INCREASE INDEX
+    self.index++;
   };
 }

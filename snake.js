@@ -1,3 +1,9 @@
+//DEFINE CONSTANTS
+const BACK_COLOR = "#808080";
+const SNAKE_COLOR = "#000000";
+const FOOD_COLOR = SNAKE_COLOR;
+const TEXT_COLOR = "#000000";
+
 //CREATE CANVAS VARIABLE
 var canvas = document.getElementById("snakeCanvas");
 
@@ -38,7 +44,7 @@ function gameloop() {
     drawFood();
 
     //DRAW SCORE
-    ctx.fillStyle = "#FFFFFF";
+    ctx.fillStyle = TEXT_COLOR;
     ctx.font = "15px Courier";
     ctx.fillText("Score: "+score, 20, 380);
 
@@ -52,14 +58,15 @@ function gameloop() {
 function drawSnake() {
   var i;
   for (i = 0; i < snake.length; i++) {
-    ctx.fillStyle = "#AAAAAA";
+    ctx.fillStyle = SNAKE_COLOR;
     ctx.fillRect(snake[i].x*canvas.height/(NUM_BLOCKS+1), snake[i].y*canvas.width/(NUM_BLOCKS+1), canvas.height/(NUM_BLOCKS+1), canvas.width/(NUM_BLOCKS+1));
+    ctx.strokeStyle = BACK_COLOR;
     ctx.strokeRect(snake[i].x*canvas.height/(NUM_BLOCKS+1), snake[i].y*canvas.width/(NUM_BLOCKS+1), canvas.height/(NUM_BLOCKS+1), canvas.width/(NUM_BLOCKS+1));
   }
 }
 
 function drawFood() {
-  ctx.fillStyle = "#AAAAAA";
+  ctx.fillStyle = FOOD_COLOR;
   ctx.fillRect(food.x*canvas.height/(NUM_BLOCKS+1), food.y*canvas.width/(NUM_BLOCKS+1), canvas.height/(NUM_BLOCKS+1), canvas.width/(NUM_BLOCKS+1));
   ctx.strokeRect(food.x*canvas.height/(NUM_BLOCKS+1), food.y*canvas.width/(NUM_BLOCKS+1), canvas.height/(NUM_BLOCKS+1), canvas.width/(NUM_BLOCKS+1));
 }
@@ -137,9 +144,9 @@ function keyboardInput(event) {
 function gameover() {
   console.log("gameover");
   playing = false;
-  ctx.fillStyle = "#FFFFFF";
+  ctx.fillStyle = TEXT_COLOR;
   ctx.font = "40px Courier";
-  ctx.fillText("you lost", 50, 50);
+  ctx.fillText("whoops!", 50, 50);
   ctx.font = "20px Courier";
   ctx.fillText("press space to play", 50, 300);
 }
@@ -161,7 +168,7 @@ function generateFood() {
 }
 
 function initiate() {
-  ctx.fillStyle = "#FFFFFF";
+  ctx.fillStyle = TEXT_COLOR;
   ctx.font = "20px Courier";
   ctx.fillText("press space to play", 50, 300);
 }
