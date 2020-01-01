@@ -40,8 +40,10 @@ function sort() {
     case "bubble":
       sorter = new BubbleSorter(array, speed);
       break;
+    case "insertion":
+      sorter = new InsertionSorter(array,speed);
+      break;
   }
-  console.log(document.getElementById("algorithm"));
   sorter.beginSorting();
 }
 
@@ -57,6 +59,10 @@ function drawArray() {
       break;
     case "bubble":
       color_2_num = sorter.index;
+      break;
+    case "insertion":
+      color_2_num = sorter.i;
+      color_3_num = sorter.j;
       break;
   }
   let arrayLength = sorter.array.length;
@@ -127,7 +133,7 @@ function SelectionSorter(passed_array, speed) {
   };
 }
 
-//CONSTRUCTOR FOR SELECTION SORTER OBJECT
+//CONSTRUCTOR FOR BUBBLE SORTER OBJECT
 function BubbleSorter(passed_array, speed) {
   this.name = "bubble";
   this.array = passed_array;
@@ -144,7 +150,7 @@ function BubbleSorter(passed_array, speed) {
 
   //MAKE ONE PROGRESSION OF BUBBLE SORT
   this.progressSortOnce = function() {
-    //HANDLE THE UPPER BOUND OF THE INDICES
+    //HANDLE THE UPPER BOUND OF THE INDEX
     if (self.index == self.arrayLength) {
       if (!hasSwapped) {
         clearInterval(self.id);
@@ -164,5 +170,43 @@ function BubbleSorter(passed_array, speed) {
     }
     //INCREASE INDEX
     self.index++;
+  };
+}
+
+//CONSTRUCTOR FOR INSERTION SORTER OBJECT
+function InsertionSorter(passed_array, speed) {
+  this.name = "insertion";
+  this.array = passed_array;
+  this.i = 1;
+  this.j = 1;
+  this.arrayLength = this.array.length;
+  this.id;
+  this.hasSwapped = false;
+  var self = this;
+
+  //FUNCTION WHICH CAUSES THE SORTING TO BEGIN
+  this.beginSorting = function() {
+    self.id = setInterval(this.progressSortOnce, speed);
+  };
+
+  //MAKE ONE PROGRESSION OF BUBBLE SORT
+  this.progressSortOnce = function() {
+    //HANDLE THE BOUNDS OF THE INDICES
+    if (self.i == self.arrayLength) {
+      clearInterval(self.id);
+      return;
+    }
+    if (self.j == 0 || self.array[self.j-1] <= self.array[self.j]) {
+      //SET INDICES
+      self.i++;
+      self.j = self.i;
+    } else {
+      //SWAP
+      let temp = self.array[self.j];
+      self.array[self.j] = self.array[self.j-1];
+      self.array[self.j-1] = temp;
+      //DECREMENT INDEX
+      self.j--;
+    }
   };
 }
