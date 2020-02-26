@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Oliver Broadrick - Sorting</title>
-  <link rel="stylesheet" type="text/css" href="../css/main.css">
-  <script type="text/javascript" src="../js/main.js"></script>
-</head>
-<body>
-  <header>
+
+<?php require_once("header.php"); ?>
+<?php require_once("navmenu.php"); ?>
+
+ <header>
       <nav>
         <ul>
           <li><a href="../index.html">OLIVER</a></li>
@@ -65,7 +62,6 @@
     </div>
   </div>
 
-  <script src="../js/sort.js"></script>
+  <script src="js/sort.js"></script>
 
-</body>
-</html>
+<?php require_once("footer.php"); ?>
