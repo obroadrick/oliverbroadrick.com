@@ -3,18 +3,6 @@
 <?php require_once("header.php"); ?>
 <?php require_once("navmenu.php"); ?>
 
- <header>
-      <nav>
-        <ul>
-          <li><a href="../index.html">OLIVER</a></li>
-          <li><a href="contact.html">CONTACT ME</a></li>
-          <li><a href="tetris.html">TETRIS</a></li>
-          <li><a href="snake.html">SNAKE</a></li>
-          <li><a href="sorting.html">SORTING</a></li>
-        </ul>
-      </nav>
-  </header>
-
   <canvas id="sortingCanvas" width="800" height="300"></canvas>
 
   <div id="sortingControls">
