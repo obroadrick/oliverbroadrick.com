@@ -3,7 +3,7 @@ html {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: #808080;
+  background-color: #AAAAAA;
 }
 
 body {
@@ -48,7 +48,7 @@ header nav ul li a:link, header nav ul li a:visited {
   color: #222222;
 }
 header nav ul li a:hover, header nav ul li a:active {
-  color: #AAAAAA;
+  color: #888888;
 }
 
 #notop {
