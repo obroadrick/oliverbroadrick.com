@@ -22,17 +22,19 @@
 </nav>
 
 <div class="container" style="text-align: center; padding-top: 50px;">
-  <canvas id="sortingCanvas" width="800" height="300" style=""></canvas>
-
-  <div id="sortingControls">
-    <div class="sortingControlItem">
-
+<div class="col-xs-0 col-md-2"></div>
+<div class="col-xs-12 col-md-8">
+    <div class="container">
+      <canvas id="sortingCanvas" width="" height="" style="width: 100%;"></canvas>
     </div>
-    <div class="sortingControlItem">
-      <input id="sortButton" value="SORT" type="button" onclick="sort()">
+
+    <div class="container">
+  <div id="form">
+    <div class="form-group">
+      <input id="btn btn-primary" value="Sort" type="button" onclick="sort()">
     </div>
-    <div class="sortingControlItem">
-      Sorting Algorithm<br>
+    <div class="form-group">
+        <label>Sorting Algorithm</label>
       <select id="algorithm">
         <option value="selection">Selection Sort</option>
         <option value="bubble">Bubble Sort</option>
@@ -40,8 +42,8 @@
         <!--<option value="quick">Quick Sort</option>-->
       </select>
     </div>
-    <div class="sortingControlItem">
-      Quantity<br>
+    <div class="form-group">
+        <label>Quantity</label>
       <select id="numElements">
         <option value="8">8</option>
         <option value="16">16</option>
@@ -52,8 +54,8 @@
         <option value="512">512</option>
       </select>
     </div>
-    <div class="sortingControlItem">
-      Speed<br>
+    <div class="form-group">
+        <label>Speed</label>
       <select id="speed">
         <option value="1">1</option>
         <option value="2">2</option>
@@ -69,7 +71,9 @@
     </div>
   </div>
 </div>
-
+    </div>
+</div>
+<div class="col-xs-0 col-md-2"></div>
 <script src="../js/sort.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRk
