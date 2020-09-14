@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Oliver Broadrick">
     <title>Oliver Broadrick - Sorting</title>
-    <link href="./imgs/gw.jpg" rel="icon">
+    <link href="../imgs/gw.jpg" rel="icon">
     <script type="text/javascript" src="../js/main.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
@@ -19,15 +19,18 @@
     </div>
     <div class="col-xs-0 col-md-3"></div>
 </nav>
-
+ 
 <div class="container-fluid">
 <div class="row justify-content-center">
 <div class="col-xs-12 col-md-6">
-    <div class="container">
+    <p style="margin-top: 16px" class="text-center">
+    Select your own sorting algorithm, number of elements, and speed; then 
+    watch the sorting unfold.
+    </p>
+    <div class="container-fluid">
       <canvas id="sortingCanvas" width="" height="" style="width: 100%;"></canvas>
     </div>
 
-    <div class="container" style="text-center">
   <div id="form" class="text-center">
     <div class="form-group">
       <input id="btn btn-primary" value="Sort" type="button" onclick="sort()">
@@ -70,7 +73,6 @@
     </div>
   </div>
 </div>
-    </div>
 </div>
 </div>
 <script src="../js/sort.js"></script>
