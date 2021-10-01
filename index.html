@@ -5,6 +5,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Oliver Broadrick">
+    <meta http-equiv="refresh" content="5">
     <title>Oliver Broadrick</title>
     <link href="./imgs/gw.jpg" rel="icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -28,31 +29,82 @@
         <div class="col-xs-12 col-sm-8 col-md-6">
             <p><img src="./imgs/headshot.jpg" width="250px" class="float-md-right p-2"></p>
             <p>
-                I am a Student-Athlete at 
+                I am an undergraduate student studying computer science 
+                and math at 
                 <a href="https://www.seas.gwu.edu/">George Washington University</a>. 
-                I study math and computer science, and I'm on the 
-                <a href="https://gwsports.com/sports/mens-rowing">Men's Rowing team</a>.
+                I'm also a proud member of
+                <a href="https://www.gwmensrowing.com/">GW Men's Rowing</a>.
             </p>
+            <h2>Research</h2>
+            <h5>Election Security - Statistical Audits</h5>
             <p>
-                Since Janurary 2020, I've had the opportunity to help with election security research
-                on risk-limiting audits that provide rigorous statistical error bounds to validate election results.
+                My first experience with academic research began early in
+                2020, working on statistical risk-limiting audits
+                which provide rigorous error bounds to validate election results.
                 I work on a team led by 
-                <a href="https://www2.seas.gwu.edu/~poorvi/">Professor Poorvi Vora</a>,
-                contributing to our 
-                <a href="https://github.com/gwexploratoryaudits/r2b2">open source audit software</a>
-                and developing a novel mathematical approach to
-                <a href="https://github.com/obroadrick/new_stratified">stratified audits</a>.
+                <a href="https://www2.seas.gwu.edu/~poorvi/">Professor Poorvi Vora</a>. I work on the theoretical parts of the problem and also
+                develop software in our
+                <a href="https://github.com/gwexploratoryaudits/r2b2">open source audit library</a>.
+                The theory consists of beautiful mathematical ideas to
+                accurately measure error such that fewer ballots 
+                need to be sampled.
+                The implementation requires thoughtful algorithmic design
+                to make computationally complex tasks achievable.
+                Manuscripts presenting novel audits and related results are 
+                currently being drafted. 
             </p>
+            <h5>Scheduling Neural Network Tasks</h5>
             <p>
-                I also love helping folks learn.
-                I've been a Learning Assistant in 
+                Given numerous real-time neural network tasks, meeting 
+                deadlines
+                necessitates a balancing of priority and precision to achieve
+                near optimal results. 
+                I am working with 
+                <a href="">Professor Bhagi Narahari</a> to develop a
+                scheduling algorithm that models such tasks as imprecise
+                computations.
+                We are designing the scheduling algorithm subject to new
+                user-in-the-loop real-time constraints, and we are 
+                implementing the algorithm to experimentally confirm
+                theoretical guarantees. 
+            </p>
+            <h5>Traffickcam</h5>
+            <p>
+                Human trafficking cases often have images from hotel rooms
+                as evidence.
+                A group led by <a href="">Professor Robert Pless</a>
+                has compiled a database of thousands of hotel room images
+                and the tool Traffickcam that can be used to 
+                identify the chain and location of the hotel in a query image. 
+                The National Center for Missing
+                and Exploited Children (NCMEC) uses Traffickcam, but 
+                there is room for improvement. The current matching approach
+                reduces the query image to a low resolution for use as input
+                in a neural network.
+                This ignores higher resolution details in the image that
+                could be identifying features for a particular room.
+                I am working on a new search capability that 
+                computes descriptors
+                of particularly useful points in the image 
+                and searches for similar such points in images in
+                the database.
+            </p>
+            <h2>Teaching</h2>
+            <p>
+                I love helping folks learn.
+                I am currently an Undergraduate Teaching Assistant
+                in <a href="">Discrete Structures II</a>, enjoying leading
+                my own weekly lab section with over twenty students.
+                I've also been a Learning Assistant in 
                 <a href="https://csci1311-s20.adamaviv.com/">Discrete Structures I</a> (Spring '20), 
                 <a href="https://www2.seas.gwu.edu/~poorvi/Classes/CS2312/Fall_2020_Syllabus.pdf">Discrete Structures II</a> (Fall '20),
                 and <a href="https://gw-cs3313-2021.github.io/">Foundations of Computing</a> (Spring '21).
-                I tutor college students for the 
+                Since high school, I have always tutored as well.
+                I currently tutor college students for the 
                 <a href="https://gwsports.com/sports/2018/8/15/tutor-request">GW Athletics Department</a>
                 and high school students for a 
-                <a href="https://www.tungstenprep.com/">local company.</a>
+                <a href="https://www.tungstenprep.com/">local Washington, DC
+                    company.</a>
                 If you're here for my tutoring, please fill out
                 <a href="https://forms.gle/BVx19VLR3wB9LMr96">this form.</a>
             </p>
@@ -85,7 +137,7 @@
             </div>
             <hr>
             <p class="small text-muted">
-            Updated January 2021
+            Updated September 2021
             |
             <a href="html/snake.html">Snake</a>
             |
@@ -102,4 +154,3 @@ ssorigin="anonymous"></script>
 
 </body>
 
-</html>
