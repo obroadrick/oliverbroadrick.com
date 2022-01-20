@@ -27,7 +27,7 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-xs-12 col-sm-8 col-md-6">
-            <h2>Computational Photography</h2>
+            <h4>Aligning and compositing images of the Prokudin-Gorskii photo collection<</h4>
             <p>
             What follows is an incomplete, in-progress report on my work for this project...
             </p>
@@ -41,7 +41,7 @@
             Prokudin-Gorskii's method involved capturing three separate negatives, each with a different filter, either red, blue, or green.
             This set of negatives can be combined to produce a full color image.
             </p>
-            <h4>Aligning an Image</h4>
+            <h4>Aligning an image</h4>
             <p> 
             Images can be downloaded from the collection in the following form.
             </p>
@@ -51,13 +51,47 @@
             My task is to align these three color channels. 
             Simply dividing the image in three equal parts and overlaying them results in a misaligned, fuzzy mess.
             </p>
-            <img src="prokudin-gorskii-images/no_alignment.jpg" width="100" alt="Fuzzy mess">
+            <img src="prokudin-gorskii-images/no_alignment.jpg" width="300" alt="Fuzzy mess">
             <p>
-            Clearly, we need to align these channels.
+            Clearly, we need to align these channels. 
+            We'll search for the correct allignment by leaving the blue channel alone and trying to match the red and green channels on top of it.
+            A candidate alignment for the red or green channel is just a translation some number of pixels in each direction, horizontal and vertical.
+            We need a metric for comparing various candidate alignments.
+            Image alignment metrics like sum of square differences or normalized cross correlation are a tempting starting point, though some colors in the
+            final image may have drastically different brightness values across the three color channels.
+            For this reason, those metrics rely on brightness variability throughout the image.
+            <!-- add an example of it failing -->
+            While I'll revisit those metrics later, for now I'll try a metric that I expect will apply better to this problem.
+            Consider the difference between a pixel and its neighboring pixel to the right.
+            For patches of pixels in the colorized image that have consistent color, this value will be similar (low) across all 
+            three channels. This may hold true even when there are changes in lighting.
+            Therefore, my initial metric for the alignment will be the sum of square differences in these neighboring pixel differences.
+            I'll compute these differences for both vertical neighbors and horiztonal neighbors, adding both to the sum.
             </p>
+            <p>
+            Here's what happens when we try all translations of distance at most 5% of the image's longer side.
+            The metric described above is minimized by the following alignment.
+            </p>
+            <img src="prokudin-gorskii-images/alignment.jpg" width="300" alt="Aligned">
 
-        <!------------------------------------------------>
+            <h4>Speeding up the algorithm</h4>
+            As described so far, this alignment algorithm is quite slow even for small images (~300px).
+            For larger images (~3000px), it runs for minutes before I give up and move on.
+            To make it faster, let's try a coarse to fine search. 
+            An image scaled down to small size requires examining many fewer candidate alignments since each pixel
+            is a larger proportion of the image. 
+            Now, we try scaling images down to just 60px side length on their shorter side, performing the search, 
+            and then inching the image back towards the full scale. At each step in between, we only bother
+            searching within the pixels corresponding to the previous solution plus or minus a bit.
+            Now we can start to align higher resolution images in seconds instead of minutes.
+            Finally, we make the observation that for a sufficiently complicated image, aligning the whole image isn't
+            necessary. Instead, a small patch of the image can be aligned, and that alignment is also correct for the whole
+            image.
+            This last observation really depends on the images being aligned, but I found that taking just the middle 20% of
+            the image was sufficient for aligning all images given in the assignment.
+            At this point, the algorithm can align all the images provided in the assignment in under a minute.
 
+<!------------------------------------------------------------------------------------------------>
             <h4>Sneak peak higher resolution image...</h4>
             <img src="prokudin-gorskii-images/00458u.jpg" width="100" alt="Unaligned color channels (from Prokudin-Gorskii collection)">
             <img src="prokudin-gorskii-images/00458u_aligned.jpg" width="500" alt="My aligned version">
