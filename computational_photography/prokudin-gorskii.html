@@ -32,7 +32,7 @@
             <p>
             Sergei Milkhailovich Prokudin-Gorskii (1863-1944) was a Russian chemist and photographer, best known for his cutting-edge methods of color photography.
             On trips sponsored by Tsar Nicholas II, Prokudin-Gorskii documented, with thousands of images, the Russian empire between the years 1905 and 1915.
-            In 1948, the resulting collection was purchased by the US Library of Congress.
+            The resulting collection was purchased by the US Library of Congress in 1948.
             </p>
             <p>
             Prokudin-Gorskii's method involved capturing three separate negatives, each with a different filter, either red, blue, or green.
@@ -41,7 +41,7 @@
             <h4>Aligning an image</h4>
             <p> 
             Images can be downloaded from the collection in the form shown; 
-            there are three sections correspond to blue, red, and green filters respectively from top to bottom.
+            there are three sections correspond to blue, green, and red filters respectively from top to bottom.
             </p>
             <img src="prokudin-gorskii-images/unmodified.png" width="300" alt="Unaligned color channels (from Prokudin-Gorskii collection)" class="float-md-right p-2">
             <p>
@@ -114,7 +114,44 @@
             <p>
             That said, I am happy with my metric, and with any tweaking that I do by hand, I can't seem to get any more satisfied by an alignment
             than I do with the algorithm's alignment.
-            I do look forward to seeing classmate's alignment metrics.
+            I do look forward to seeing classmates' alignment metrics.
+            </p>
+            <h6>Metric Comparison</h6>
+            <p>
+            Up until this point, I've been interested in making the algorithm faster.
+            I've tweaked the parameters a bit (how coarse we go and how quicly we go back to the
+            full image), and I've found that small patches of the original image are always
+            sufficient for finding the alignment.
+            Out of curiosity, I at this point plugged in the old basic image alignment metric, 
+            the sum of differences squared. I noticed that while that metric gets the correct
+            alignment for a full patch size, it would not perform as consistently when patch
+            size is reduced. This was a nice bit of evidence that my neighboring pixel differences
+            metric works well, sometimes better than the naive version.
+            </p>
+            <table>
+                <tr>
+                    <th>Metric, Patch Size</th>
+                    <th>Images Aligned</th>
+                </tr>
+                <tr>
+                    <td>Sum of Differences Squared, 100%</td>
+                    <td>17/17</td>
+                </tr>
+                <tr>
+                    <td>Neighboring Pixel Differences, 100%</td>
+                    <td>17/17</td>
+                </tr>
+                <tr>
+                    <td>Sum of Differences Squared, 20%</td>
+                    <td>15/17</td>
+                </tr>
+                <tr>
+                    <td>Neighboring Pixel Differences, 20%</td>
+                    <td>17/17</td>
+                </tr>
+            </table>
+            
+            
             With the alignment algorithm totally working (and quickly now), I can show some of my favorite among the newly aligned images.
             </p>
             <p>
