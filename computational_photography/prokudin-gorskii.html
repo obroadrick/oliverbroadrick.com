@@ -86,6 +86,10 @@
             and then inching the image back towards the full scale. At each step in between, we only bother
             searching within the pixels corresponding to the previous solution plus or minus a bit.
             Here is a Python implementation of the course to fine search. 
+            As seen, I played around with some parameters to minimize how much of the search space we consider at each
+            step, landing on values that worked quickly but accurately on all the images in the dataset.
+            Stepping up the scaling factor by 3/4 each time seemed based on limited testing to give a nice
+            balance between search space size and number of searches.
 
             <script src="https://gist.github.com/obroadrick/2a44a48cf81452b326d49d087dec2fe8.js"></script>
 
