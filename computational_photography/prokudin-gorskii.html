@@ -85,6 +85,10 @@
             Now, we try scaling images down to just 60px side length on their shorter side, performing the search, 
             and then inching the image back towards the full scale. At each step in between, we only bother
             searching within the pixels corresponding to the previous solution plus or minus a bit.
+            Here is a Python implementation of the course to fine search. 
+
+            <script src="https://gist.github.com/obroadrick/2a44a48cf81452b326d49d087dec2fe8.js"></script>
+
             Now we can start to align higher resolution images in seconds instead of minutes.
             Finally, we make the observation that for a sufficiently complicated image, aligning the whole image isn't
             necessary. Instead, a small patch of the image can be aligned, and that alignment is also correct for the whole
