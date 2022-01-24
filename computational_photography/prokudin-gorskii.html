@@ -46,13 +46,13 @@
             <p> 
             Images can be downloaded from the collection in the following form.
             </p>
-            <img src="prokudin-gorskii-images/00458u.jpg" width="100" alt="Unaligned color channels (from Prokudin-Gorskii collection)" class="float-md-right p-2">
+            <img src="prokudin-gorskii-images/unmodified.jpg" width="100" alt="Unaligned color channels (from Prokudin-Gorskii collection)" class="float-md-right p-2">
             <p>
             The three sections correspond to blue, red, and green filters respectively from top to bottom.
             My task is to align these three color channels. 
             Simply dividing the image in three equal parts and overlaying them results in a misaligned, fuzzy mess.
             </p>
-            <img src="prokudin-gorskii-images/no_alignment.jpg" width="300" alt="Fuzzy mess">
+            <img src="prokudin-gorskii-images/unaligned.jpg" width="300" alt="Fuzzy mess">
             <p>
             Clearly, we need to align these channels. 
             We'll search for the correct allignment by leaving the blue channel alone and trying to match the red and green channels on top of it.
@@ -61,8 +61,7 @@
             Image alignment metrics like sum of square differences or normalized cross correlation are a tempting starting point, though some colors in the
             final image may have drastically different brightness values across the three color channels.
             For this reason, those metrics rely on brightness variability throughout the image.
-            <!-- add an example of it failing -->
-            While I'll revisit those metrics later, for now I'll try a metric that I expect will apply better to this problem.
+            For now I'll try a metric that I expect will apply better to this problem.
             Consider the difference between a pixel and its neighboring pixel to the right.
             For patches of pixels in the colorized image that have consistent color, this value will be similar (low) across all 
             three channels. This may hold true even when there are changes in lighting.
