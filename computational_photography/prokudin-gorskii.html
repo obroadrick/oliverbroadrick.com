@@ -58,6 +58,7 @@
             We'll search for the correct allignment by leaving the blue channel alone and trying to match the red and green channels on top of it.
             A candidate alignment for the red or green channel is just a translation some number of pixels in each direction, horizontal and vertical.
             We need a metric for comparing various candidate alignments.
+            <h6>Aligning an image</h6>
             Image alignment metrics like sum of square differences or normalized cross correlation are a tempting starting point, though some colors in the
             final image may have drastically different brightness values across the three color channels.
             For this reason, those metrics rely on brightness variability throughout the image.
@@ -94,12 +95,14 @@
             <script src="https://gist.github.com/obroadrick/2a44a48cf81452b326d49d087dec2fe8.js"></script>
             <p>
             Now we can start to align higher resolution images in seconds instead of minutes.
+            <h6>Patches</h6>
             Finally, we make the observation that for a sufficiently complicated image, aligning the whole image isn't
-            necessary. Instead, a small patch of the image can be aligned, and that alignment is also correct for the whole
+            necessary. Instead, a small patch of the image can be aligned, and the corresponding translations can be used for the whole
             image.
-            This last observation really depends on the images having sufficient information throughout the image (or at least in the sampled patch).
+            This last observation really depends on an image having sufficient information throughout the image (or at least in the sampled patch).
+            For this dataset,
             I found that taking just the middle 20% of
-            the image was sufficient for aligning all images given in this assignment.
+            the image was sufficient for aligning all images.
             Here's the corresponding function in Python.
             </p>
             <script src="https://gist.github.com/obroadrick/40dc78aab7efbf3e9e3be8d7a59a683c.js"></script>
@@ -116,7 +119,7 @@
             That said, I am happy with my metric, and with any tweaking that I do by hand, I can't seem to get any more satisfied by an alignment
             than I do with the algorithm's alignment.
             I do look forward to seeing classmate's alignment metrics.
-            With the alignment algorithm totally working (quickly), I can now show some of my favorite among the newly aligned images.
+            With the alignment algorithm totally working (and quickly now), I can show some of my favorite among the newly aligned images.
             </p>
             <p>
             <img src="prokudin-gorskii-images/00458u.jpg" width="100" alt="Unaligned color channels (from Prokudin-Gorskii collection)">
@@ -126,9 +129,24 @@
             <img src="prokudin-gorskii-images/01861a.jpg" width="100" alt="Unaligned color channels (from Prokudin-Gorskii collection)">
             <img src="prokudin-gorskii-images/01861a_aligned.jpg" width="500" alt="My aligned version">
             </p>
-             <p>
+            <p>
             <img src="prokudin-gorskii-images/31421v.jpg" width="100" alt="Unaligned color channels (from Prokudin-Gorskii collection)">
             <img src="prokudin-gorskii-images/31421v_aligned.jpg" width="500" alt="My aligned version">
+            </p>
+            <h4>To change the images further?</h4>
+            <p>
+            Frankly I don't want to do too much with these images. I find the way they look to be compelling on their own (including the 
+            funny edges) because it all says something about the history.
+            I do recognize at least that the funky edges are in part an artifact of my using the "numpy.roll()" function.
+            For this reason, I concluded by removing the border in each dimension only as far as the channels were translated.
+            That is, I kept as much of the correctly aligned image as possible, which importantly does leave some funny looking
+            edges from the glass panes still. I like them - quite a bit.
+            </p>
+            <p>
+            <img src="prokudin-gorskii-images/remove_rolled_bit.png" width="500" alt="remove artifact of numpy roll">
+            </p>
+            <p>
+            This gives, for a couple of the images, a nice way to make the colors pop a bit more.
             </p>
             <h5>Sources</h5>
             <p>
