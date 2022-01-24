@@ -72,7 +72,7 @@
             Here's what happens when we try all translations of distance at most 5% of the image's longer side.
             The metric described above is minimized by the following alignment.
             </p>
-            <img src="prokudin-gorskii-images/alignment.jpg" width="300" alt="Aligned">
+            <img src="prokudin-gorskii-images/00458u_aligned.jpg" width="300" alt="Aligned">
 
             <h4>Speeding up the algorithm</h4>
             As described so far, this alignment algorithm is quite slow even for small images (~300px).
@@ -87,9 +87,11 @@
             Finally, we make the observation that for a sufficiently complicated image, aligning the whole image isn't
             necessary. Instead, a small patch of the image can be aligned, and that alignment is also correct for the whole
             image.
-            This last observation really depends on the images being aligned, but I found that taking just the middle 20% of
-            the image was sufficient for aligning all images given in the assignment.
-            At this point, the algorithm can align all the images provided in the assignment in under a minute.
+            This last observation really depends on the images having sufficient information throughout the image (or at least in the sampled patch).
+            I found that taking just the middle 20% of
+            the image was sufficient for aligning all images given in this assignment.
+            At this point, the algorithm can align all the images in the assignment dataset in under a minute.
+            Here's a montage of some of my favorites! 
 
             <h5>Sources</h5>
             [1] <a href="http://www2.seas.gwu.edu/~pless/computationalPhotography/project1/description.php">Assignment from Professor Pless</a><br>
