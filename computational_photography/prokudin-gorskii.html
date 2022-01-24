@@ -44,11 +44,11 @@
             </p>
             <h4>Aligning an image</h4>
             <p> 
-            Images can be downloaded from the collection in the following form.
+            Images can be downloaded from the collection in the form shown; 
+            there are three sections correspond to blue, red, and green filters respectively from top to bottom.
             </p>
             <img src="prokudin-gorskii-images/unmodified.png" width="300" alt="Unaligned color channels (from Prokudin-Gorskii collection)" class="float-md-right p-2">
             <p>
-            The three sections correspond to blue, red, and green filters respectively from top to bottom.
             My task is to align these three color channels. 
             Simply dividing the image in three equal parts and overlaying them results in a misaligned, fuzzy mess.
             </p>
@@ -67,7 +67,9 @@
             three channels. This may hold true even when there are changes in lighting.
             Therefore, my initial metric for the alignment will be the sum of square differences in these neighboring pixel differences.
             I'll compute these differences for both vertical neighbors and horiztonal neighbors, adding both to the sum.
+            Here is a Python implementation of the described algorithm.
             </p>
+            <script src="https://gist.github.com/obroadrick/dc1727d553daf85e2e9210cad4ba2ff7.js"></script>
             <p>
             Here's what happens when we try all translations of distance at most 5% of the image's longer side.
             The metric described above is minimized by the following alignment.
@@ -97,7 +99,6 @@
             [1] <a href="http://www2.seas.gwu.edu/~pless/computationalPhotography/project1/description.php">Assignment from Professor Pless</a><br>
             [2] <a href="https://en.wikipedia.org/wiki/Sergey_Prokudin-Gorsky">Wikipedia entry on Prokudin-Gorskii</a>
 
-<!------------------------------------------------------------------------------------------------>
             <h4>Sneak peak higher resolution image...</h4>
             <img src="prokudin-gorskii-images/00458u.jpg" width="100" alt="Unaligned color channels (from Prokudin-Gorskii collection)">
             <img src="prokudin-gorskii-images/00458u_aligned.jpg" width="500" alt="My aligned version">
