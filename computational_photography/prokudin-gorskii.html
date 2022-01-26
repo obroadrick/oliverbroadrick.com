@@ -67,9 +67,9 @@
             <p>
                 That is, if r and b are two dimensional arrays of brightness values, each for a different color channel, 
                 I propose that <cod>r[i,j] - r[i,j+1]</cod> and <cod>r[i,j]-r[i-1,j]</cod> give values that may be 
-                resistant to variance across channels. (Hindsight is clear, I may have been even better off trying the absolute value
+                resistant to variance across channels. (Hindsight is clearer; I may have been even better off trying the absolute value
                 of these values.) The corresponding sum of difference squares metric that I used is as follows:<br>
-                <cod>((r[i,j] - r[i,j+1])-(b[i,j] - b[i,j+1]))^2</cod> and <cod>((r[i,j] - r[i+1,j])-(b[i,j] - b[i+1,j]))^2</cod>
+                <cod>((r[i,j] - r[i,j+1]) - (b[i,j] - b[i,j+1]))^2</cod> and <cod>((r[i,j] - r[i+1,j]) - (b[i,j] - b[i+1,j]))^2</cod>
             </p>
             <p>
             I'll compute these differences for both vertical neighbors and horiztonal neighbors, adding both to the sum, as shown in the expression above.
