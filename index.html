@@ -72,16 +72,16 @@
                 A group led by <a href="https://www2.seas.gwu.edu/~pless/">Professor Robert Pless</a>
                 has already compiled a database of millions of hotel room images
                 and developed the tool Traffickcam that can be used to 
-                match query images hotel chains and locations.
+                match query images to specific hotel and hotel chains.
                 The National Center for Missing
                 and Exploited Children (NCMEC) uses Traffickcam as it is, but 
-                there is room for improvement. The current matching approach essentially
-                reduces the resolution of the query image for use as input to a neural network.
-                This ignores higher resolution details in the image that
-                could be identifying features for a particular room.
-                I am working on a new search capability that 
-                computes descriptors of such key points in the image 
-                and searches for similar points in the database to find matches.
+                there is room for improvement.
+                The current version computes a single descriptor of the query image to compare to those in the database.
+                This descriptor could miss high resolution details in the image that
+                are useful for hotel recognition.
+                With a group of other CS seniors, I'm working 
+                on a new version of Traffickcam that uses key points
+                for matching instead.
             </p>
             <h4>Teaching</h4>
             <p>
