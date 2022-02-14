@@ -110,6 +110,24 @@
             <p>
             <img src="hybrid-images/scary.png" width="400" alt="scary bilbo">
             </p>
+            <p>
+            To turn this into a GIF, I use a simple approach.
+            If we want the low frequency to dominate when the viewer is hypothetically far away,
+            and we want the high frequency to dominate up close, let's just take a weighted
+            average of the each of the two components (low and high).
+            Without trying to figure out anything clever about what this should really look like,
+            I just let each subsequent frame in the GIF have the high frequency weight increase
+            and the low frequency weight decrease by the same amount.
+            That is, over the course of all frames, one weight is a just a linear function, and 
+            the other weight is also a linear function, but more simply is just one minus
+            the first weight. All these words aside, here is the simple code to do what I'm saying.
+            </p>
+            <p>
+            <script src="https://gist.github.com/obroadrick/b9b295c62010e929413c5e3de8e5005b.js"></script>
+            </p>
+            <p>
+            <img src="hybrid-images/scary-gif.png" width="400" alt="scary bilbo gif">
+            </p>
             <h5>Sources</h5>
             <p>
             [1] <a href="https://www2.seas.gwu.edu/~pless/computationalPhotography/project2.php">Assignment from Professor Pless</a><br>
