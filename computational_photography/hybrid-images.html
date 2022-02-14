@@ -30,9 +30,38 @@
         <div class="col-xs-12 col-sm-10 col-md-10">
             <h4>Hybrid images</h4>
             <p>
-            As introduced by Oliva et. al. in the 2006 SIGGRAPH paper, <a href="https://stanford.edu/class/ee367/reading/OlivaTorralb_Hybrid_Siggraph06.pdf">"Hybrid Images"</a>, high frequency data from one image can be combined with low frequency data from another to produce an image in which both originals can be seen at different distances.
+            As introduced by Oliva et al. in the 2006 SIGGRAPH paper, <a href="https://stanford.edu/class/ee367/reading/OlivaTorralb_Hybrid_Siggraph06.pdf">"Hybrid Images"</a>, high frequency data from one image can be combined with low frequency data from another to produce an image in which both originals can be seen at different distances.
+            Simply, people can only see small details so clearly. At a distance, high frequency 
+            information in an image is no longer visible, and the low frequency data is all 
+            one can see. On the other hand, when one is up close to an image, they can see the
+            high frequency information clearly.
+            For this reason, hybrid images can combine two different images into one, where both
+            can be seen somewhat clearly at different distances.
+            </p>
+            <h4>Filters for different frequencies</h4>
+            <p>
+            As suggested in the paper, I achieve a low-pass filter by using a simpler 
+            Gaussian filter.
+            I achieve a high-pass filter with an impulse filter by subtracting a Gaussian-blurred
+            image from the original.
+            To combine images, I simply average them.
+            Getting appealing results comes down to finding Gaussian parameters for each of
+            the filters. I did also play a bit with combining images with a weighted average,
+            but I ultimately didn't find any of those results more compelling than a regular
+            average (weights both equal to one).
+            </p>
+            <h4>Results</h4>
+            <p>
+            A big fan of trees, I started by finding a nice picture of the same tree from during
+            winter and summer. I figured it would be interesting to see the leafy tree at a 
+            distance but also see the details of branch positions deep into the tree when
+            closer.
+            Here are the results. Since this is the first result I am showing, I included
+            a graphic with the images that were produced along the way, which shows the 
+            process I used.
             </p>
             <p>
+            <img src="hybrid-images/tree-process.png" width="400" alt="tree process">
             <img src="hybrid-images/tree.png" width="400" alt="tree">
             </p>
             <h5>Sources</h5>
