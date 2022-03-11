@@ -74,7 +74,7 @@
             really precise clicks, I know that lazy clicking and automatic
             correction will be much nicer in the long run.
             </p>
-            <h4>Automaticly improved correspondences</h4>
+            <h4>Automatically improved correspondences</h4>
             <p>
             I take a basic solution to this problem. For each corresponding
             point, I search within a small radius (~10 pixels) and find
@@ -90,7 +90,22 @@
             Now the results are getting seriously satisfying. That is a 
             well-aligned table. And, in future images, I won't have to
             worry as much about my click precision.
+            That said, the transition is still a bit harsh. It is
+            especially noticable up at the top on the wall where the
+            lighting is different in the two images. I'm guessing
+            my phone 'corrected' for lighting automatically, leading
+            to this difference.
+            An easy way to ease this transition without actually
+            thinking about lighting at all is to have a gradient
+            from one image to the next where each pixel in the mosaic
+            that has data from both images (i.e. they are overlapping 
+            at that point) can be a weighted average where the weights are
+            high for an image when the point is nearer that image.
+            I'll assign the weights for each row of pixels by finding
+            the width of the overlap and having the weights be 
+            linear from 0 to 1 throughout that overlap.
             </p>
+            <h4>
             <h5>Sources</h5>
             <p>
             [1] <a href="https://www2.seas.gwu.edu/~pless/computationalPhotography/project3.php">Assignment from Professor Pless</a><br>
