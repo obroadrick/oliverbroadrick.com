@@ -95,16 +95,43 @@
             lighting is different in the two images. I'm guessing
             my phone 'corrected' for lighting automatically, leading
             to this difference.
-
+            </p>
+            <h4>Smoother transitions</h4>
+            <p>
             An easy way to ease this transition without actually
             thinking about lighting at all is to have a gradient
             from one image to the next where each pixel in the mosaic
-            that has data from both images (i.e. they are overlapping 
-            at that point) can be a weighted average where the weights are
+            that has data from both images (i.e. the images overlap there)
+            can be a weighted average where the weights are
             high for an image when the point is nearer that image.
             I'll assign the weights for each row of pixels by finding
             the width of the overlap and having the weights be 
             linear from 0 to 1 throughout that overlap.
+            Here is the two-image mosaic with that transition.
+            </p>
+            <p>
+            <img src="mosaics/transition-wow.png" width="600" alt="Images with transition">
+            </p>
+            <p>
+            I am terribly pleased with this result. I can't really find
+            artifacts of the mosaicing process. Maybe I'm missing them?
+            Don't be fooled! There is a line on the table form the
+            sunlight to shadow of the window, but that line is not
+            from the mosaicing. The right most overlapping column in the 
+            mosaic is actually dozens of pixels to the left of that line
+            (check the previous images if you don't believe me).
+            <h4>New images</h4>
+            So far, I've let these two images dictate my workflow by
+            motivating each subsequent improvement.
+            Now, I'm totally happy with the mosaic I've made from these
+            two, and it's time to move on to different images.
+            In order to make the whole process a single pipeline, 
+            I'll take one final step of writing a nice little function
+            that will take a bunch of images as input and create their
+            mosaic.
+            At risk of of boring you, I'll just show that function 
+            (in Python) to remind you of the several steps I'm taking
+            to make my mosaics.
             </p>
             <h4>
             <h5>Sources</h5>
