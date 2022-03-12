@@ -62,33 +62,44 @@
             I used an interface on my laptop
             to click on the images to get their coorespondences.
             to find the homography.
-            I began by finding just four correspondences which worked, 
+            I began by finding just four correspondences, which worked, 
             but I wanted to test that my minimization code worked too, 
             and so I added a fifth point. The alignment got slightly
-            better with the fifth point, but not much. Here is the 
+            better with the fifth point, but not much. Here is that 
             result.
-
             </p>
             <p>
             <img src="mosaics/first-stitch-full.png" width="600" alt="First full stitch">
             </p>
             <p>
             This is a satisfying result after writing out the code
-            to solve the linear system. That said, it is clearly misaligned.
+            to solve the linear system. That said, it is misaligned.
             Look at the table. The napkin. The math is clearly doing
             what it's supposed to, so I blame my clicking precision.
+            I'm not much of a clicker, apparently.
             While I'll admit that I did spend a bunch of time trying to get
-            really precise clicks, I know that lazy clicking and automatic
-            correction will be much nicer in the long run.
+            really precise clicks, I know that lazy, low-pressure 
+            clicking followed by automatic
+            correction/optimization will be much nicer in the long run.
             </p>
             <h4>Automatically improved correspondences</h4>
             <p>
-            I take a basic solution to this problem. For each corresponding
+            I use a basic solution to this problem. For each corresponding
             point, I search within a small radius (~10 pixels) and find
             the point which minimizes the sum of the differences squared
-            of the pixels within that same radius around each 
-            candidate point.
-            This imediately gave better results.
+            of the pixels within that same radius.
+            This way my clicks can be off by a bit, but the homography
+            will still be based on the intended correspondences that I 
+            had in mind.
+            A bit of a balancing act is performed here. 
+            These patches of pixels
+            within the radius shouldn't really be the same in the two
+            images (if they were, no homography is needed: the images 
+            are already aligned perfectly). This means that the optimization
+            might not always work, but, by keeping the radius small, it is
+            more likely that the patches will line up even for 
+            significantly warped images.
+            This method imediately improved the results.
             </p>
             <p>
             <img src="mosaics/align-search-stitch-full.png" width="600" alt="First aligned full stitch">
