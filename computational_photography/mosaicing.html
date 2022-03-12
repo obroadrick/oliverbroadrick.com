@@ -31,14 +31,14 @@
             <h4>Image mosaicing</h4>
             <p>
             An image is like a projection of 3D rays onto a 2D plane.
-            Two images from the same viewpoint but taken with the 
+            Two images taken from the same point but with the
             camera pointing in different directions may capture some
             of the same rays. With cool linear algebra, we can
-            find a way to map the coordinates of image to the coordinates
-            of the other so that a combined image can be formed.
+            find a way to map the coordinates between such images.
+            Then images can be combined to show a wider
+            field of view than any one of them showed alone. 
             In this project I capture multiple images from one viewpoint
-            and create an image mosaic
-            that extends the field of view to show them all in one image.
+            and such an image mosaic.
             </p>
             <h4>Homography</h4>
             <p>
@@ -48,13 +48,20 @@
             <h4>Initial two-image mosaicing</h4>
             <p>
             Now that I can find the homography to map pixels in one
-            image to pixels in the other, I can extend a left-hand
+            image to pixels in the other, I can begin creating image mosaics.
+            I start with a couple of images I took sitting at a table
+            eating lunch a few days ago.
+            <p>
+            <img src="mosaics/left.jpg" width="300" alt="Left image raw">
+            <img src="mosaics/right.jpg" width="300" alt="Right image raw">
+            </p>
+            I can extend the left-hand
             image by adding
-            new columns at the right-hand side that get pixel data
-            from the right-hand image.
-            To begin, I used an interface on my laptop
-            to click on points on the images to get their coordinates
-            to be used as the correspondences to find the homography.
+            new columns at the right-hand side that get pixel values
+            from the right-hand images by mapping the coordinates over.
+            I used an interface on my laptop
+            to click on the images to get their coorespondences.
+            to find the homography.
             I began by finding just four correspondences which worked, 
             but I wanted to test that my minimization code worked too, 
             and so I added a fifth point. The alignment got slightly
