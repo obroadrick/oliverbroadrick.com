@@ -119,11 +119,12 @@
             <p>
             An easy way to ease this transition without actually
             thinking about lighting at all is to have a gradient
-            from one image to the next where each pixel in the mosaic
-            that has data from both images (i.e. the images overlap there)
-            can be a weighted average where the weights are
-            high for an image when the point is nearer that image.
-            I'll assign the weights for each row of pixels by finding
+            from one image to the next wherever the images overlap.
+            I'll use a weighted average where the weights are
+            high for an image on its side of the overlap and low 
+            out at its boundary.
+            Specifically, I'll assign weights for each row of the
+            mosaic by finding
             the width of the overlap and having the weights be 
             linear from 0 to 1 throughout that overlap.
             Here is the two-image mosaic with that transition.
@@ -132,17 +133,22 @@
             <img src="mosaics/transition-wow.png" width="600" alt="Images with transition">
             </p>
             <p>
-            I am terribly pleased with this result. I can't really find
-            artifacts of the mosaicing process. Maybe I'm missing them?
-            Don't be fooled! There is a line on the table form the
-            sunlight to shadow of the window, but that line is not
-            from the mosaicing. The right most overlapping column in the 
+            I am pleased with this result. Artificats of the mosaicing
+            process are more subtle now. In the transition area, you
+            can find little fuzzy double edges where things aren't quite
+            aligned and the averaging is showing both images.
+            That said, this is easily the best result so far.
+            And don't be fooled by the shadows! 
+            There is a line on the table from the
+            sunlight/shadow, but that line is not
+            from the mosaicing process. 
+            The rightmost overlapping column in the 
             mosaic is actually dozens of pixels to the left of that line
             (check the previous images if you don't believe me).
             <h4>New images</h4>
             So far, I've let these two images dictate my workflow by
             motivating each subsequent improvement.
-            Now, I'm totally happy with the mosaic I've made from these
+            Now, I'm pretty happy with the mosaic I've made from these
             two, and it's time to move on to different images.
             In order to make the whole process a single pipeline, 
             I'll take one final step of writing a nice little function
