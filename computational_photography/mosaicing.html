@@ -137,7 +137,7 @@
             process are more subtle now. In the transition area, you
             can find little fuzzy double edges where things aren't quite
             aligned and the averaging is showing both images.
-            That said, this is easily the best result so far.
+            That said, this is certainly the best result so far.
             And don't be fooled by the shadows! 
             There is a line on the table from the
             sunlight/shadow, but that line is not
@@ -145,8 +145,35 @@
             The rightmost overlapping column in the 
             mosaic is actually dozens of pixels to the left of that line
             (check the previous images if you don't believe me).
+            <h4>Rectifying images</h4>
+            Here I'll take a short break from mosaics in order to show
+            another nice use of a homography. We can map points in an
+            image not to another image's plane but instead to some
+            points that give a desired property (shape).
+            An example will make this clearer.
+            I hate when I'm sitting off to one side in a classroom, and
+            I take a picture of the whiteboard to supplement my notes.
+            Of course the picture is all distorted and annoying to 
+            read because of the angle. Well, a quick homography 
+            solves this problem. Here's an image of some trig on
+            a whiteboard.
+            <p>
+            <img src="mosaics/torectify.png" width="600" alt="To rectify">
+            </p>
+            Now, I clicked to find the coordinates of the four corners
+            of the whiteboard, and I then chose coordinates of a perfect
+            rectangle and treated them as the correspondences.
+            The resulting homography gives us a straight-on perspective
+            of the trig!
+            <p>
+            <img src="mosaics/rectified.png" width="600" alt="Rectified">
+            </p>
+            This is really quite a satisfying exercise, and a nice
+            application of this image warping.
             <h4>New images</h4>
-            So far, I've let these two images dictate my workflow by
+            Back to mosaicing.
+            So far, I've let the two images from lunch
+            dictate my workflow by
             motivating each subsequent improvement.
             Now, I'm pretty happy with the mosaic I've made from these
             two, and it's time to move on to different images.
