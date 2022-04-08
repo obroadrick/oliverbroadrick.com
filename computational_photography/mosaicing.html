@@ -31,20 +31,33 @@
             <p>March 2022</p>
             <h4>Image mosaicing</h4>
             <p>
-            An image is like a projection of 3D rays onto a 2D plane.
-            Two images taken from the same point but with the
+            An image is like a projection of many 3D rays 
+            of light onto a 2D plane.
+            Two images taken from the same location but with the
             camera pointing in different directions may capture some
-            of the same rays. With cool linear algebra, we can
-            find a way to map the coordinates between such images.
-            Then images can be combined to show a wider
+            of the same rays, but simply overlaying
+            the two images won't succesfully align them since
+            the different perspectives distort things. 
+            With cool linear algebra, we can
+            find a way to map the coordinates between such images
+            so that they can be combined to show a wider
             field of view than any one of them showed alone. 
             In this project I capture multiple images from one viewpoint
-            and such an image mosaic.
+            and create such an image mosaic.
             </p>
-            <h4>Homography</h4>
+            <h4>Note on the idea of a homography</h4>
             <p>
-            I need to think more still about how I want to explain
-            this cool math.
+            A homography is a map from one projective space to another.
+            In the context of images, the world is a 3D vector space,
+            and two images are 2D projective spaces. To map the 
+            coordinates of one image to the other, we use a homography.
+            While the details of the linear algebra are interesting (very),
+            they are beyond the scope of this report. I implemented the
+            linear algebra for finding homographies 
+            myself (my bell/whistle), and it was quite fun to do so. 
+            In particular, I wrote code to solve the exact system
+            (four correspondences) and to solve the overdetermined
+            system (by minimizing square differences).
             </p>
             <h4>Initial two-image mosaicing</h4>
             <p>
