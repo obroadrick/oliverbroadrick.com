@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Oliver Broadrick">
+    <!--<meta http-equiv="refresh" content="5">-->
+    <title>Oliver Broadrick</title>
+    <link href="./imgs/crest.png" rel="icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/063cf6042c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark bg-dark">
+    <div class="col-xs-0 col-md-3"></div>
+    <div class="col-xs-12 col-md-6">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="../index.html">Oliver Broadrick</a>
+        </div>
+    </div>
+    <div class="col-xs-0 col-md-3"></div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <!-- <div class="col-xs-12 col-sm-8 col-md-6"> -->
+        <div class="col-xs-12 col-sm-10 col-md-10">
+            <p>March 2022</p>
+            <h4>Image mosaics</h4>
+            <p>
+            If you have many images, they can be arranged into a grid such that a newer, bigger image emerges.
+            Practically, creating such an image mosaic consists of a desired bigger image, and a dataset of many images from which to build the bigger one. Breaking the bigger image into patches, each patch can be matched to a similar image in the dataset. 
+            Given a meaningful bigger image and related dataset of images, the results can be compelling.
+            My goal in this project was to create an image mosaic for the GW Computer Science Department. 
+            </p>
+            <h4>Making image mosaics</h4>
+            <p>
+            The code is rather simple. The desired big image is broken into many 'patches' (I made mine 16 pixels by 16 pixels), and then the dataset of images is searched over. I made a duplicate dataset of just the 16x16 images as vectors, so that the distance computations were a bit quicker, and from there it is just a matter of minimizing the distance from each desired (big image) patch to an image from the dataset.
+            I didn't allow a dataset image to be used more than once (that would be lame), and so the order in which the patches are filled in affects the results, especially when dealing with a smaller dataset. Thus, I filled in the patches from the center outwards, as opposed to the more natural left to right, up to down ordering.
+            To test my code, I made a simple image with a white background and black text:
+            </p>
+            <p>
+            <img src="imagemosaics/csatgw.png" width="500" alt="cs@gw original">
+            </p>
+            <p>
+            For testing, I used the CIFAR-10 dataset which has many thousands of labeled images for training machine learning models, but of course suffices for our purposes too.
+            If I go ahead and use 10,000=10^4 images from the dataset, we imediately get a crisp result:
+            </p>
+            <p><img src="imagemosaics/csatgw10k.png" width="500" alt="cs@gw 10k"></p>
+            On the other hand, if we only use 1000 images from the dataset while building the mosaic, we get the following less impressive result by comparison:
+            <p><img src="imagemosaics/csatgw1000.png" width="500" alt="cs@gw 1000"></p>
+            <p>
+            This observation is a bit forshadowing. Really, this is a dataset building project.
+            </p>
+            <h4>Building a dataset</h4>
+            <p>
+            Scraping Twitter, Instagram, etc was my first thought, but it turns out they don't make it easy to get images in bulk (I'm not the first to have tried...).
+            Google images, however, are quite easy to scrape, and Fair Use is Fair Use.
+            I started by scraping the first few pages of results from queries like "GW Computer Science", "GW Campus", and "GW RD Showcase".
+            The resulting images had a terrible mix of duplicates, unrelated contents, and papers/banners/graphics that didn't look good in a mosaic. 
+            Here is that result.
+            </p>
+            <p><img src="imagemosaics/messydataset.png" width="500" alt="cs@gw messy dataset"></p>
+            <p>
+            In the end, it actually doesn't look bad from afar. The many images of white background with text (screen shots of a papers) do a good job filling in the white background of the target image, giving good contrast. That said, the result isn't a compelling one when you go to look at the individual images. Some cleaning of this dataset is necessary, and frankly, I just spent the time removing images by hand rather quickly and haphazardly.
+            Here is the resulting image.
+            </p>
+            <p><img src="imagemosaics/cleanedbutempty.png" width="500" alt="cs@gw cleaned but empty"></p>
+            <p>
+            This almost looks like a step backwards. First of all, much of the outter border of the image isn't even getting unique images anymore because there aren't enough. Further, there is much less contrast in this mosaic. The solution: find more images for the dataset.
+            I went on and added some images by hand from various CS Professor's website, lab webpages, and the CS Department website. 
+            Then, I took several dozen images with my phone in and around SEH.
+            The slightly improved dataset gave me resulted in the following mosaic.
+            </p>
+            <p><img src="imagemosaics/somemore.png" width="500" alt="cs@gw some more"></p>
+            <p>
+            Now I need more images in this dataset. I really appreciate ideas on how to go about this. I already intend to (1) reach out to friends and ask for images they have, (2) take many more images myself, asking CS folks to stand here and there for them, and (3) scrape some more images from Google.
+            Other ideas are appreciated!
+            </p>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRk
+ssorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</body>
+
