@@ -40,11 +40,16 @@
             <p>
             The code is rather simple. The desired big image is broken into many 'patches' (I made mine 16 pixels by 16 pixels), and then the dataset of images is searched over. I made a duplicate dataset of just the 16x16 images as vectors, so that the distance computations were a bit quicker, and from there it is just a matter of minimizing the distance from each desired (big image) patch to an image from the dataset.
             I didn't allow a dataset image to be used more than once (that would be lame), and so the order in which the patches are filled in affects the results, especially when dealing with a smaller dataset. Thus, I filled in the patches from the center outwards, as opposed to the more natural left to right, up to down ordering.
-            To test my code, I made a simple image with a white background and black text:
+            A fun image to look at is a slice of a 150 dataset images as vectors. This is the form
+            in which they are used for the differences squared computation.
             </p>
+            <p><img src="imagemosaics/vectors.png" width="300" alt="vectors"></p>
             <p>
-            <img src="imagemosaics/csatgw.png" width="500" alt="cs@gw original">
+            And here is the code that makes an image mosaic using this matrix of vectorized images (called 'vectors' in the code).
             </p>
+            <p><script src="https://gist.github.com/obroadrick/e165290a54da3667e96d95ebce147783.js"></script></p>
+            To test my code, I made a simple image with a white background and black text:
+            <p><img src="imagemosaics/csatgw.png" width="500" alt="cs@gw original"></p>
             <p>
             For testing, I used the <a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR-10 dataset</a> which has many thousands of labeled images for training machine learning models, but of course suffices for our purposes too.
             If I go ahead and use 10,000=10^4 images from the dataset, we imediately get a crisp result:
