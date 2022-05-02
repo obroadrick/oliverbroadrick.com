@@ -29,7 +29,7 @@
         <!-- <div class="col-xs-12 col-sm-8 col-md-6"> -->
         <div class="col-xs-12 col-sm-10 col-md-10">
             <p>March 2022</p>
-            <h4>Image mosaicing</h4>
+            <h4>Image stitching</h4>
             <p>
             An image is like a projection of many 3D rays 
             of light onto a 2D plane.
@@ -43,7 +43,7 @@
             so that they can be combined to show a wider
             field of view than any one of them showed alone. 
             In this project I capture multiple images from one viewpoint
-            and create such an image mosaic.
+            and create such an image stitching.
             </p>
             <h4>Note on the idea of a homography</h4>
             <p>
@@ -59,10 +59,10 @@
             (four correspondences) and to solve the overdetermined
             system (by minimizing square differences).
             </p>
-            <h4>Initial two-image mosaicing</h4>
+            <h4>Initial two-image stitching</h4>
             <p>
             Now that I can find the homography to map pixels in one
-            image to pixels in the other, I can begin creating image mosaics.
+            image to pixels in the other, I can begin creating image stitchings.
             I start with a couple of images I took sitting at a table
             eating lunch a few days ago.
             <p>
@@ -137,16 +137,16 @@
             high for an image on its side of the overlap and low 
             out at its boundary.
             Specifically, I'll assign weights for each row of the
-            mosaic by finding
+            stitching by finding
             the width of the overlap and having the weights be 
             linear from 0 to 1 throughout that overlap.
-            Here is the two-image mosaic with that transition.
+            Here is the two-image stitching with that transition.
             </p>
             <p>
             <img src="mosaics/transition-wow.png" width="600" alt="Images with transition">
             </p>
             <p>
-            I am pleased with this result. Artificats of the mosaicing
+            I am pleased with this result. Artificats of the stitching 
             process are more subtle now. In the transition area, you
             can find little fuzzy double edges where things aren't quite
             aligned and the averaging is showing both images.
@@ -154,12 +154,12 @@
             And don't be fooled by the shadows! 
             There is a line on the table from the
             sunlight/shadow, but that line is not
-            from the mosaicing process. 
+            from the stitching process. 
             The rightmost overlapping column in the 
-            mosaic is actually dozens of pixels to the left of that line
+            stitching is actually dozens of pixels to the left of that line
             (check the previous images if you don't believe me).
             <h4>Rectifying images</h4>
-            Here I'll take a short break from mosaics in order to show
+            Here I'll take a short break from stitching in order to show
             another use of a homography. We can map points in an
             image not to another image's plane but instead to some
             points that give a desired property (shape).
