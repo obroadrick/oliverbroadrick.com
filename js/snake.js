@@ -142,6 +142,14 @@ function keyboardInput(event) {
 }
 
 function gameover() {
+  //TRACK HIGH SCORE
+  const fs = require('fs')
+  fs.writeFile('./scores.txt',score,err=> {
+    if (err) {
+        console.error(err)
+        return
+    }
+  })
   console.log("gameover");
   playing = false;
   ctx.fillStyle = TEXT_COLOR;
