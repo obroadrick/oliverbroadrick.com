@@ -51,19 +51,17 @@
             <h5>Statistical Election Audits</h5>
             <p>
                 Since 2020 I've been a member of 
-                <a href="https://www2.seas.gwu.edu/~poorvi/">Professor Poorvi Vora</a>'s
+                <a href="https://www2.seas.gwu.edu/~poorvi/">Professor Poorvi Vora's</a>
                 research group on risk-limiting audits (RLAs), rigorous statistical procedures
                 used to detect errors in election results.
                 We developed PROVIDENCE, the most efficient and secure ballot polling RLA known today.
-                I wrote the proof that PROVIDENCE is risk-limiting, 
-                designed and conducted simulation experiments,
-                implemented it in
-                <a href="https://github.com/gwexploratoryaudits/r2b2">open source RLA software</a>,
-                and participated in its pilot use by the US State of Rhode Island, described in 
-                <a href="https://www.ri.gov/press/view/43054">their press release</a>.
+                I wrote proofs of theoretical properties, designed simulation experiments, and 
+                implemented it all in our
+                <a href="https://github.com/gwexploratoryaudits/r2b2">open source RLA software</a>.
                 I presented <a href="/posters/audits_poster.pdf">a poster</a> at the 2022 GW SEAS 
                 R+D Showcase.
-                Preprints and publications are given below, and an additional manuscript is in preparation.
+                Preprints and publications are given below, and additional manuscripts are in preparation.
+
                 <ul>
                 <li>
                 [<a href="https://arxiv.org/abs/2210.08717">pdf</a>]
@@ -78,7 +76,7 @@
             </p>
             <h5>Glitter</h5>
             <p>
-            Hold a sheet of a glitter to light and enjoy the sparkles. Move it just slightly, and a whole new sparkle pattern emerges! This high sensitivity of appearance to pose gives glitter sheets strong potential as a cheap target for single image camera calibration. Since Summer 2022, I've been working with <a href="https://www2.seas.gwu.edu/~pless/">Professor Robert Pless</a> and peer <a href="https://github.com/adellari">Addy Irankunda</a> on this problem. I've made a few blogs posts about it:
+            Hold a sheet of a glitter to light and enjoy the sparkles. Rotate it just slightly, and a whole new sparkle pattern emerges! This high sensitivity of appearance to orientation give glitter sheets strong potential as a target for single image camera calibration. Since Summer 2022, I have been working with <a href="https://www2.seas.gwu.edu/~pless/">Professor Robert Pless</a> and peer <a href="https://github.com/adellari">Addy Irankunda</a> to test this hypothesis. I've made a few blogs posts about it:
             <a href="https://blogs.gwu.edu/pless/2022/05/28/glitter-summer-begins/">1</a>, 
             <a href="https://blogs.gwu.edu/pless/2022/06/07/detecting-specs-glitter-week-2/">2</a>, 
             <a href="https://blogs.gwu.edu/pless/2022/06/11/glitter-spec-surface-normals-week-3/">3</a>,
@@ -96,14 +94,12 @@
 
             <h5>Scheduling</h5>
             <p>
-                I designed and analyzed scheduling algorithms using the imprecise computation model for a project on real-time AI at the edge. Here is the <a href="https://github.com/obroadrick/imprecise">software</a>, and our submission is given below.
+                I designed and analyzed scheduling algorithms using the imprecise computation model for a project on real-time AI at the edge. Here is the <a href="https://github.com/obroadrick/imprecise">software</a>. 
 
             <ul>
             <li>
             [ ] 
-            Hesham Fouad, Oliver Broadrick, Benjamin Harvey, Charles Peeke, and Bhagirath Narahari, "RealTime AI: Using AI on the Tactical Edge," In review, submitted to Elsevier book chapter in "Assured
-Trust and Autonomy in Human-Machine teams (AAAI SSS 2022)", selected invited papers based on
-presentation at 2022 AAAI Spring symposium.
+            In review: submitted to Elsevier book chapter in "Assured Trust and Autonomy in Human-Machine teams (AAAI SSS 2022)", selected invited papers based on presentation at 2022 AAAI Spring symposium.
             </ul>
             </p>
             </div><!--end research section-->
