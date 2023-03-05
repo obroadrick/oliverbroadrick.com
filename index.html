@@ -41,39 +41,40 @@
             <div><!--begin research section-->
             <h4>Research</h4>
             <p>
-                My research interests are still forming, but I like thinking mathematically, 
-                and I've particularly enjoyed working on projects with social impact.
-            <h5>Statistical Election Audits</h5>
+                My research interests are still forming. I love thinking mathematically,
+                and I particularly enjoy projects with social impact.
+            </p>
             <p>
-                Since 2020 I've been a member of 
-                <a href="https://www2.seas.gwu.edu/~poorvi/">Professor Poorvi Vora</a>'s
-                research group on risk-limiting audits (RLAs), rigorous statistical procedures
+            <em>Statistical Election Audits.</em>
+                In a group led by 
+                <a href="https://www2.seas.gwu.edu/~poorvi/">Professor Poorvi Vora</a>,
+                I have worked on risk-limiting audits (RLAs), rigorous statistical procedures
                 used to detect errors in election results.
-                We developed PROVIDENCE, the most efficient and secure ballot polling RLA known today.
-                I wrote the proof that PROVIDENCE is risk-limiting, 
-                designed and conducted simulation experiments,
-                implemented it in
-                <a href="https://github.com/gwexploratoryaudits/r2b2">open source RLA software</a>,
+                This work has included simulation experiments [1] 
+                and the development of a new statistical test, PROVIDENCE,
+                the most efficient and secure ballot polling RLA known today [2].
+                I wrote a proof that PROVIDENCE is risk-limiting, 
+                conducted simulation experiments to verify theoretical claims,
+                wrote an 
+                <a href="https://github.com/gwexploratoryaudits/r2b2">open source</a> 
+                implementation,
                 and participated in its pilot use by the US State of Rhode Island, described in 
                 <a href="https://www.ri.gov/press/view/43054">their press release</a>.
                 I presented <a href="/posters/audits_poster.pdf">a poster</a> at the 2022 GW SEAS 
                 R+D Showcase.
-                Preprints and publications are given below, and an additional manuscript is in preparation.
-                <ul>
-                <li>
-                [<a href="/papers/providence.pdf">preprint</a>, <a href="https://arxiv.org/abs/2210.08717">arxiv (similar) version</a>]
-                Oliver Broadrick, Poorvi Vora, and Filip Zag&oacute;rski, "PROVIDENCE: a Flexible Round-by-Round Risk-Limiting Audit". To appear, USENIX Security 2023.
- 
-                <li>
-                [<a href="/papers/simulations-of-ballot-polling-rlas.pdf">pdf</a>,
-                <a href="https://youtu.be/XyWogUQDf1c">video</a>,
-                <a href="/slides/audit_sims.pdf">slides</a>]
-                Oliver Broadrick, Sarah Morin, Grant McClearn, Neal McBurnett, Poorvi L. Vora, and Filip Zag&oacute;rski, "Simulations of Ballot Polling Risk-Limiting Audits". Seventh Workshop on Advances in Secure Electronic Voting, in association with Financial Cryptography 2022.
-                </ul>
             </p>
-            <h5>Glitter</h5>
             <p>
-            Hold a sheet of a glitter to light and enjoy the sparkles. Move it just slightly, and a whole new sparkle pattern emerges! This high sensitivity of appearance to pose gives glitter sheets strong potential as a cheap target for single image camera calibration. Since Summer 2022, I've been working with <a href="https://www2.seas.gwu.edu/~pless/">Professor Robert Pless</a> and peer <a href="https://github.com/adellari">Addy Irankunda</a> on this problem. I've made a few blogs posts about it:
+            <em>Glitter.</em>
+            The appearance of a sheet of glitter illuminated by a point light source is 
+            highly sensitive to viewing position. This makes gives glitter sheets 
+            strong potential as an inexpensive planar target for single image camera 
+            calibration. Since Summer 2022, I've been working with 
+            <a href="https://www2.seas.gwu.edu/~pless/">Professor Robert Pless</a> 
+            and peer <a href="https://github.com/adellari">Addy Irankunda</a> 
+            to develop such a camera calibration tool resulting in a manuscript
+            we're submitting to ICCV 2023 [3].
+            <!--
+            I've made a few blogs posts about it:
             <a href="https://blogs.gwu.edu/pless/2022/05/28/glitter-summer-begins/">1</a>, 
             <a href="https://blogs.gwu.edu/pless/2022/06/07/detecting-specs-glitter-week-2/">2</a>, 
             <a href="https://blogs.gwu.edu/pless/2022/06/11/glitter-spec-surface-normals-week-3/">3</a>,
@@ -83,24 +84,25 @@
             <img src="../imgs/glitter.JPG" width="300"> 
             <figcaption class='small text'>A sheet of a glitter with fiducial markers in the corner for locating individual specs; this is a real prototype of the camera calibration target we are proposing.</figcaption>
             </figure>
-            <ul>
-            <li>
-            [ ]
-            In preparation: Oliver Broadrick, Adellar Irankunda, Maya Shende, Abby Stylianou, and Robert Pless, "Single Image Camera Calibration From Glitter", in preparation to be submitted to ICCV 2023.
-            </ul>
+            -->
 
-            <h5>Scheduling</h5>
             <p>
-                I designed and analyzed scheduling algorithms using the imprecise computation model for a project on real-time AI at the edge. Here is the <a href="https://github.com/obroadrick/imprecise">software</a>, and our submission is given below.
-
-            <ul>
-            <li>
-            [preprint forthcoming] 
-            Hesham Fouad, Oliver Broadrick, Benjamin Harvey, Charles Peeke, and Bhagirath Narahari, "RealTime AI: Using AI on the Tactical Edge," Elsevier book chapter in "Assured
-Trust and Autonomy in Human-Machine teams (AAAI SSS 2022)", selected invited papers based on
-presentation at 2022 AAAI Spring symposium.
-            </ul>
+            <em>Scheduling.</em>
+                I designed and analyzed scheduling algorithms using the imprecise 
+                computation model for a project on real-time AI at the edge, contributing
+                in a book chapter [4] on real-time AI.
             </p>
+
+            <ol>
+            <li> Oliver Broadrick, Adellar Irankunda, Maya Shende, Abby Stylianou, and Robert Pless, "Single Image Camera Calibration From Glitter", in preparation to be submitted to ICCV 2023.
+
+            <li> Oliver Broadrick, Poorvi Vora, and Filip Zag&oacute;rski, <a href="/papers/providence.pdf">PROVIDENCE: a Flexible Round-by-Round Risk-Limiting Audit</a>. To appear, USENIX Security 2023. Similar version on <a href="https://arxiv.org/abs/2210.08717">arxiv</a>.
+
+            <li> Hesham Fouad, Oliver Broadrick, Benjamin Harvey, Charles Peeke, and Bhagirath Narahari, "Real-Time AI: Using AI on the Tactical Edge," Elsevier book chapter in "Assured Trust and Autonomy in Human-Machine teams (AAAI SSS 2022)", selected invited papers based on presentation at 2022 AAAI Spring symposium.
+
+            <li> Oliver Broadrick, Sarah Morin, Grant McClearn, Neal McBurnett, Poorvi L. Vora, and Filip Zag&oacute;rski, <a href="/papers/simulations-of-ballot-polling-rlas.pdf">Simulations of Ballot Polling Risk-Limiting Audits</a>. Seventh Workshop on Advances in Secure Electronic Voting, in association with Financial Cryptography 2022. (Presentation <a href="https://youtu.be/XyWogUQDf1c">video</a> and <a href="/slides/audit_sims.pdf">slides</a>.)
+            </ol>
+
             </div><!--end research section-->
 
             <div><!--assorted links section-->
